@@ -1,5 +1,5 @@
 ## Project structure
-```
+```sh
 .
 ├── README.md
 ├── config.js
@@ -10,7 +10,8 @@
 ├── package-lock.json
 ├── package.json
 ├── routes.js
-└── server.js
+├── server.js
+└── services
 ```
 
 ## Technology Stacks
@@ -18,23 +19,24 @@
 - Mongo
 - Mongoose
 - Nodemon
-- Passport.js
+- ~~Passport.js~~
 - JWT
 - morgan
-- Winston
+- ~~Winston~~
+- bcrypt
 
 ## Prerequsition
 - Installed mongodb
-- Config database in ./config.js
+- Config database and token expired in `./config.js`
 
 ## API Routes
 ```
-No authentication needed
+No authentication needed routes
 
 User registration use case
-http://localhost:3000/api/user/setup
+http://localhost:3000/api/user/signup
 
-User logged-in use awe
+User logged-in use case
 http://localhost:3000/api/authentication
 
 Required authentication in header
@@ -48,7 +50,7 @@ This version not supports Refresh token, it only have token based authentication
 ### Create a simeple user
 ```
 curl -X GET \
-  http://localhost:3000/api/user/setup \
+  http://localhost:3000/api/user/signup \
   -H 'cache-control: no-cache' \
   -H 'x-access-token: <golf token>'
 ```
